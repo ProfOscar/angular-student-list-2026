@@ -1,5 +1,28 @@
+<!-- Aggiunta nuovo studente -->
+<div class="student-input">
+    <div>
+        <label for="txtName">Nome studente: </label>
+        <input type="text" id="txtName">
+    </div>
+    <div>
+        <input type="radio" name="gender" id="rdbF" value="F"> Femmina
+        <input type="radio" name="gender" id="rdbM" value="M"> Maschio
+    </div>
+    <div>
+        <label for="lstTown"></label>
+        <select name="lstTown" id="lstTown">
+            <!-- scorro l'array di città e creo le option -->
+             @for (item of towns; track $index) {
+                <option value="{{item}}">{{item}}</option>
+             }
+        </select>
+    </div>
+    <button>AGGIUNGI STUDENTE</button>
+</div>
+
+<!-- Visualizzazione lista studenti -->
 <h2>Students List:</h2>
 <!-- <app-student *ngFor="let student of students" [item]="student"></app-student> -->
 @for (student of students; track $index) {
-    <app-student [item]="student" [index]="$index + 1"></app-student>
+<app-student [item]="student" [index]="$index + 1"></app-student>
 }
