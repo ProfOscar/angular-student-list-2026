@@ -1,0 +1,8 @@
+.presence {
+    cursor: pointer;
+    /* min-width: 150px; */
+}
+
+.presence>span {
+    min-width: 150px;
+}

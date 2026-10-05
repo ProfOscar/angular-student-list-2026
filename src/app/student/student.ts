@@ -21,4 +21,8 @@ export class Student {
       'font-weight': s.present ? 'normal' : 'bold'
     }
   }
+
+  onPresentClick() {
+    this.item.present = !this.item.present;
+  }
 }
