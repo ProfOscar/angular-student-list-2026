@@ -2,22 +2,22 @@
 <div class="student-input">
     <div>
         <label for="txtName">Nome studente: </label>
-        <input type="text" id="txtName">
+        <input type="text" id="txtName" [(ngModel)]="studentName">
     </div>
     <div>
-        <input type="radio" name="gender" id="rdbF" value="F"> Femmina
-        <input type="radio" name="gender" id="rdbM" value="M"> Maschio
+        <input type="radio" name="gender" id="rdbF" value="F" [(ngModel)]="studentGender"> Femmina
+        <input type="radio" name="gender" id="rdbM" value="M" [(ngModel)]="studentGender"> Maschio
     </div>
     <div>
         <label for="lstTown"></label>
-        <select name="lstTown" id="lstTown">
+        <select name="lstTown" id="lstTown" [(ngModel)]="studentTown">
             <!-- scorro l'array di città e creo le option -->
-             @for (item of towns; track $index) {
-                <option value="{{item}}">{{item}}</option>
-             }
+            @for (item of towns; track $index) {
+            <option value="{{item}}">{{item}}</option>
+            }
         </select>
     </div>
-    <button>AGGIUNGI STUDENTE</button>
+    <button (click)="onAddStudent()">AGGIUNGI</button>
 </div>
 
 <!-- Visualizzazione lista studenti -->
