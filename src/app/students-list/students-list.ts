@@ -40,6 +40,10 @@ export class StudentsList {
     this.students.push(newStudent);
   }
 
+  onRemoveStudent(index: number) {
+    this.students.splice(index, 1);
+  }
+
   // Genera tra min e max con max escluso
   generaNumero(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
