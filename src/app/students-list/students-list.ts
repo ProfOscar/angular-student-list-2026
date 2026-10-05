@@ -22,10 +22,15 @@ export class StudentsList {
   ]
 
   studentName: string = "";
-  studentGender: string = "F";
-  studentTown: string = "";
+  studentGender: string = this.generaNumero(1, 3) == 1 ? "F" : "M";
+  studentTown: string = this.towns[this.generaNumero(0, this.towns.length)];
 
   onAddStudent() {
+    if (this.studentName.length == 0) {
+      alert("Il nome è obbligatorio!");
+      return;
+    }
+
     let newStudent = {
       name: this.studentName,
       city: this.studentTown,
@@ -33,5 +38,10 @@ export class StudentsList {
       present: true
     }
     this.students.push(newStudent);
+  }
+
+  // Genera tra min e max con max escluso
+  generaNumero(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 }
