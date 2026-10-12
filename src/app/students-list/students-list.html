@@ -58,8 +58,8 @@
     <!-- <app-student *ngFor="let student of students" [item]="student"></app-student> -->
     @for (student of students; track $index) {
     <div class="col-12" style="position: relative;">
-        <app-student [item]="student" [index]="$index + 1"></app-student>
-        <button type="button" class="btn-close" aria-label="Close" (click)="onRemoveStudent($index)"></button>
+        <app-student [item]="student" [index]="$index" (removeStudentEvent)="onRemoveStudent($event)"></app-student>
+        <!-- <button type="button" class="btn-close" aria-label="Close" (click)="onRemoveStudent($index)"></button> -->
     </div>
     }
 </div>

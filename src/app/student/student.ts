@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Student {
   @Input() item: any;
   @Input() index: number = 0;
+  @Output() removeStudentEvent = new EventEmitter<number>();
 
   M_COLOR = "lightblue";
   F_COLOR = "pink";
@@ -24,5 +25,9 @@ export class Student {
 
   onPresentClick() {
     this.item.present = !this.item.present;
+  }
+
+  onRemoveClick() {
+    this.removeStudentEvent.emit(this.index);
   }
 }
